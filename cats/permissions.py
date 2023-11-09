@@ -1,5 +1,6 @@
 from rest_framework import permissions
 
+
 class OwnerOrReadOnly(permissions.BasePermission):
 
     def has_permission(self, request, view):
@@ -10,6 +11,7 @@ class OwnerOrReadOnly(permissions.BasePermission):
 
     def has_object_permission(self, request, view, obj):
         return obj.owner == request.user
+
 
 class ReadOnly(permissions.BasePermission):
 
